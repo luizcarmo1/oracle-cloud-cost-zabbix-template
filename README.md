@@ -6,6 +6,13 @@ O template é focado exclusivamente no acompanhamento de custos da tenancy em **
 
 > **Importante:** este template é complementar ao template oficial **Oracle Cloud by HTTP** do Zabbix. Recomenda-se utilizar o `Oracle Cloud by HTTP` para monitorar os demais recursos e serviços da OCI, enquanto este template é utilizado especificamente para monitoramento de custos. O template oficial possui descoberta e monitoramento de recursos como Compute, Autonomous Database, VCN, Block Volumes, Boot Volumes e Object Storage.
 
+## Author
+
+Developed and maintained by [luizcarmo1](https://github.com/luizcarmo1).
+
+Repository:
+https://github.com/luizcarmo1/oracle-cloud-cost-zabbix-template
+
 ## Requisitos
 
 * Zabbix **7.0 LTS**
@@ -24,8 +31,8 @@ Recomenda-se criar um usuário e um grupo dedicados ao monitoramento.
 Exemplo:
 
 ```text
-Grupo: ZABBIX-OP
-Usuário: zabbix.op
+Grupo: ZABBIX-OCI-Monitoring
+Usuário: zabbix-oci-monitoring
 ```
 
 Para consultar os dados de custo através da Usage API, a principal permissão necessária é:
