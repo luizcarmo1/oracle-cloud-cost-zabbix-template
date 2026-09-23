@@ -25,6 +25,8 @@ zabbix_export:
         Quando os dados referentes ao dia atual ainda não estiverem disponíveis na OCI, o item correspondente retorna 0 BRL, evitando que o valor de um dia anterior seja interpretado incorretamente como o custo do dia atual.
         
         O template utiliza as APIs oficiais da Oracle Cloud Infrastructure e requer um usuário da OCI com as permissões necessárias para consultar os dados de Usage.
+      vendor_name: luizcarmo1
+      vendor_version: 1.0.0
       groups:
         - name: Templates/Cloud
       items:
