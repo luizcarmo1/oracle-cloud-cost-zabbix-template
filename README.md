@@ -38,7 +38,7 @@ Usuário: zabbix-oci-monitoring
 Para consultar os dados de custo através da Usage API, a principal permissão necessária é:
 
 ```text
-Allow group ZABBIX-OP to read usage-report in tenancy
+Allow group ZABBIX-OCI-Monitoring to read usage-report in tenancy
 ```
 
 A Oracle documenta `read usage-report` como uma das permissões que permitem utilizar a Usage API para consulta de dados de custo.
@@ -46,9 +46,9 @@ A Oracle documenta `read usage-report` como uma das permissões que permitem uti
 No ambiente em que este template foi desenvolvido também são utilizadas:
 
 ```text
-Allow group ZABBIX-OP to inspect tenancies in tenancy
-Allow group ZABBIX-OP to inspect compartments in tenancy
-Allow group ZABBIX-OP to manage usage-report in tenancy
+Allow group ZABBIX-OCI-Monitoring to inspect tenancies in tenancy
+Allow group ZABBIX-OCI-Monitoring to inspect compartments in tenancy
+Allow group ZABBIX-OCI-Monitoring to manage usage-report in tenancy
 ```
 
 Essas permissões adicionais **não são necessárias para a finalidade básica deste template** e podem ser avaliadas de acordo com as necessidades do ambiente.
