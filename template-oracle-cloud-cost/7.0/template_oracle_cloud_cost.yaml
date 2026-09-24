@@ -1027,3 +1027,136 @@ zabbix_export:
         - macro: '{$OCI.HTTP.RESPONSE.CODE.OK}'
           value: '200'
           description: 'Código de resposta HTTP esperado para uma requisição bem-sucedida à API de Usage da OCI. O valor padrão é 200.'
+      dashboards:
+        - uuid: 43fdaa63a5294e55ae3c95be43eb1cd0
+          name: 'Oracle Cloud Cost Overview'
+          auto_start: 'NO'
+          pages:
+            - name: Overview
+              widgets:
+                - type: item
+                  name: 'Current Month'
+                  width: '26'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: bg_color
+                      value: 6C00D9
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: 'Oracle Cloud Cost by HTTP'
+                        key: oci.cost.current_month
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: show.2
+                      value: '4'
+                - type: item
+                  name: Yesterday
+                  'y': '5'
+                  width: '26'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: bg_color
+                      value: 00D936
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: 'Oracle Cloud Cost by HTTP'
+                        key: oci.cost.yesterday
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: show.2
+                      value: '4'
+                - type: item
+                  name: Today
+                  'y': '10'
+                  width: '26'
+                  height: '5'
+                  fields:
+                    - type: STRING
+                      name: bg_color
+                      value: 2196F3
+                    - type: ITEM
+                      name: itemid.0
+                      value:
+                        host: 'Oracle Cloud Cost by HTTP'
+                        key: oci.cost.today
+                    - type: INTEGER
+                      name: show.0
+                      value: '1'
+                    - type: INTEGER
+                      name: show.1
+                      value: '2'
+                    - type: INTEGER
+                      name: show.2
+                      value: '4'
+                - type: graph
+                  name: 'OCI Cost: Daily Cost'
+                  x: '26'
+                  width: '46'
+                  height: '8'
+                  fields:
+                    - type: GRAPH
+                      name: graphid.0
+                      value:
+                        host: 'Oracle Cloud Cost by HTTP'
+                        name: 'OCI Cost: Daily Cost'
+                    - type: STRING
+                      name: reference
+                      value: VJXKA
+                - type: graph
+                  name: 'OCI Cost: Monthly Accumulated'
+                  x: '26'
+                  'y': '8'
+                  width: '46'
+                  height: '7'
+                  fields:
+                    - type: GRAPH
+                      name: graphid.0
+                      value:
+                        host: 'Oracle Cloud Cost by HTTP'
+                        name: 'OCI Cost: Monthly Accumulated'
+                    - type: STRING
+                      name: reference
+                      value: YHLKN
+  graphs:
+    - uuid: 401f3be4a43a4386ad6d4c0c8997aeb5
+      name: 'OCI Cost: Daily Cost'
+      graph_items:
+        - color: 199C0D
+          calc_fnc: ALL
+          item:
+            host: 'Oracle Cloud Cost by HTTP'
+            key: oci.cost.2days_ago
+        - sortorder: '1'
+          color: F63100
+          calc_fnc: ALL
+          item:
+            host: 'Oracle Cloud Cost by HTTP'
+            key: oci.cost.today
+        - sortorder: '2'
+          color: 2774A4
+          calc_fnc: ALL
+          item:
+            host: 'Oracle Cloud Cost by HTTP'
+            key: oci.cost.yesterday
+    - uuid: 6263a30c2cf543c2b1bdf2757c24b5f8
+      name: 'OCI Cost: Monthly Accumulated'
+      graph_items:
+        - color: 199C0D
+          calc_fnc: ALL
+          item:
+            host: 'Oracle Cloud Cost by HTTP'
+            key: oci.cost.current_month
