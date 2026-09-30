@@ -14,18 +14,18 @@ It allows infrastructure and cloud administrators to monitor OCI spending, track
 
 The template provides monitoring for:
 
-- **Current month cost**
-- **Today's cost**
-- **Yesterday's cost**
-- **Cost from two days ago**
-- **Daily cost threshold alerts**
-- **OCI Usage API integration**
-- **OCI API Key authentication**
-- **RSA-SHA256 request signing**
-- **HTTPS/TLS communication**
-- **Optional HTTP proxy support**
-- **Zabbix graphs and dashboard**
-- Cost values in **BRL**
+* **Current month cost**
+* **Today's cost**
+* **Yesterday's cost**
+* **Cost from two days ago**
+* **Daily cost threshold alerts**
+* **OCI Usage API integration**
+* **OCI API Key authentication**
+* **RSA-SHA256 request signing**
+* **HTTPS/TLS communication**
+* **Optional HTTP proxy support**
+* **Zabbix graphs and dashboard**
+* Cost values in **BRL**
 
 ## Zabbix Community Templates
 
@@ -79,64 +79,70 @@ Zabbix Items
    +--> Dashboard
    |
    +--> Cost Alerts
+```
 
-The template uses OCI API Key authentication and signs requests using RSA-SHA256.
+The template uses **OCI API Key authentication** and signs requests using **RSA-SHA256**.
 
-Monitoring
+## Monitoring
 
 The template provides four main cost monitoring items:
 
-Metric	Zabbix item key
-Current month cost	oci.cost.current_month
-Today's cost	oci.cost.today
-Yesterday's cost	oci.cost.yesterday
-Cost from two days ago	oci.cost.2days_ago
+| Metric                 | Zabbix item key          |
+| ---------------------- | ------------------------ |
+| Current month cost     | `oci.cost.current_month` |
+| Today's cost           | `oci.cost.today`         |
+| Yesterday's cost       | `oci.cost.yesterday`     |
+| Cost from two days ago | `oci.cost.2days_ago`     |
 
 Two Warning triggers can be configured using:
 
-{$OCI.COST.DAILY.LIMIT}
+`{$OCI.COST.DAILY.LIMIT}`
 
 This allows the Zabbix administrator to define the daily cost threshold appropriate for the environment.
 
-Requirements
-Zabbix 7.0 LTS
-Oracle Cloud Infrastructure tenancy
-OCI user with API Key authentication
-OCI IAM permission to access the Usage API
-Network connectivity from Zabbix to the OCI Usage API
+## Requirements
+
+* Zabbix 7.0 LTS
+* Oracle Cloud Infrastructure tenancy
+* OCI user with API Key authentication
+* OCI IAM permission to access the Usage API
+* Network connectivity from Zabbix to the OCI Usage API
 
 An HTTP proxy can optionally be configured for environments where Zabbix does not have direct Internet access.
 
-Documentation
+## Documentation
 
 For complete installation and configuration instructions, including:
 
-OCI IAM configuration
-API Key setup
-Required permissions
-Zabbix macros
-Authentication
-HTTP proxy configuration
-Items
-Triggers
-Dashboard
-Graphs
-Troubleshooting
+* OCI IAM configuration
+* API Key setup
+* Required permissions
+* Zabbix macros
+* Authentication
+* HTTP proxy configuration
+* Items
+* Triggers
+* Dashboard
+* Graphs
+* Troubleshooting
 
 see the version-specific documentation:
 
-Oracle Cloud Cost by HTTP — Zabbix 7.0
+**[Oracle Cloud Cost by HTTP — Zabbix 7.0](Cloud/Oracle/template_oracle_cloud_cost/7.0/README.md)**
 
-Official Zabbix Template
+## Official Zabbix Template
 
 This template is specifically focused on OCI cost monitoring.
 
 For monitoring OCI infrastructure and resources, it can be used together with the official Zabbix template:
 
-Oracle Cloud by HTTP
+**[Oracle Cloud by HTTP](https://www.zabbix.com/integrations/oracle)**
 
 The two templates have complementary purposes:
 
+### Oracle Cloud by HTTP
+
+```text
 Oracle Cloud by HTTP
         |
         +--> OCI infrastructure
@@ -145,25 +151,31 @@ Oracle Cloud by HTTP
         +--> Storage
         +--> Databases
         +--> Other OCI resources
+```
 
+### Oracle Cloud Cost by HTTP
+
+```text
 Oracle Cloud Cost by HTTP
         |
         +--> Monthly cost
         +--> Daily cost
         +--> Cost thresholds
         +--> Cost alerts
-Repository
+```
 
-GitHub:
+## Repository
 
-oracle-cloud-cost-zabbix-template
+**GitHub:**
 
-Author
+[oracle-cloud-cost-zabbix-template](https://github.com/luizcarmo1/oracle-cloud-cost-zabbix-template)
 
-Developed and maintained by luizcarmo1.
+## Author
 
-License
+Developed and maintained by [luizcarmo1](https://github.com/luizcarmo1).
+
+## License
 
 This project is licensed under the MIT License.
 
-See LICENSE for details: https://github.com/luizcarmo1/oracle-cloud-cost-zabbix-template/blob/fix/template-directory/LICENSE.
+See [LICENSE](LICENSE) for details.
