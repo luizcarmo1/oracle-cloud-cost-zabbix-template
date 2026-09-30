@@ -166,4 +166,4 @@ License
 
 This project is licensed under the MIT License.
 
-See LICENSE for details.
+See LICENSE for details: https://github.com/luizcarmo1/oracle-cloud-cost-zabbix-template/blob/fix/template-directory/LICENSE.
