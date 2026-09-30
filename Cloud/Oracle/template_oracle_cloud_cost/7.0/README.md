@@ -401,7 +401,7 @@ Project:
 ## References
 
 * [Oracle Cloud Infrastructure Documentation](https://docs.oracle.com/en-us/iaas/Content/home.htm)
-* [OCI Usage API](https://docs.oracle.com/en-us/iaas/api/#/en/usage/20190111/)
+* [OCI Usage API](https://docs.oracle.com/en-us/iaas/api/#/en/usage/20200107/)
 * [OCI API Signing](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/signingrequests.htm)
 * [OCI IAM Policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm)
 * [Zabbix](https://www.zabbix.com/)
